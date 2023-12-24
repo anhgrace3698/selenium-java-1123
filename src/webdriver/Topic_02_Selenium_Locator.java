@@ -68,30 +68,60 @@ public class Topic_02_Selenium_Locator {
 	@Test
 	public void TC_04_Tagname() {
 		//tim ra bao nhieu the input tren man hinh hien tãi 
+		System.out.println(driver.findElements(By.tagName("input")).size());
+		
 	}
 	
 	@Test
 	public void TC_05_LinkText() {
-
+		//click vao duong link address 
+		driver.findElement(By.linkText("Addresses")).click();
+		
 	}
 	
 	@Test
 	public void TC_06_PartialLinkText() {
-
+		//click vao link apply for vendor - tuong doi - chay cham hon
+		driver.findElement(By.partialLinkText("vendor account")).click();
 	}
 	
+	//css va xpath la nhieu ki thuat nhat
 	@Test
 	public void TC_07_Css() {
-
+		//Mo lai trang register
+		driver.get("https://demo.nopcommerce.com/register");
+		
+		// 1
+		driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Check1");
+		
+		//2
+		driver.findElement(By.cssSelector("input[id='LastName']")).sendKeys("Check2");
+		
+		//3
+		driver.findElement(By.cssSelector("input[name='Email']")).sendKeys("Check3");
+		
 	}
+	
+	//tu css sang xpath: them // va @ attribute
 	
 	@Test
 	public void TC_08_Xpath() {
-
+		//Mo lai trang register
+		driver.get("https://demo.nopcommerce.com/register");
+		
+		// 1
+		driver.findElement(By.xpath("//input[@id='FirstName']")).sendKeys("Check1-xpath");
+		
+		//2
+		driver.findElement(By.xpath("//input[@id='LastName']")).sendKeys("Check2-xpath");
+		
+		//3
+		driver.findElement(By.xpath("//label[text()='Email:']/following-sibling::input")).sendKeys("Check3-xpath");
+		
 	}
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 }
