@@ -85,7 +85,10 @@ public class Topic_02_Selenium_Locator {
 		driver.findElement(By.partialLinkText("vendor account")).click();
 	}
 	
+	//css
 	//css va xpath la nhieu ki thuat nhat
+	
+	
 	@Test
 	public void TC_07_Css() {
 		//Mo lai trang register
@@ -102,7 +105,9 @@ public class Topic_02_Selenium_Locator {
 		
 	}
 	
+	//xpath
 	//tu css sang xpath: them // va @ attribute
+	
 	
 	@Test
 	public void TC_08_Xpath() {
